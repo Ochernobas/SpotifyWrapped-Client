@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { HashRouter, BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import Header from './components/Header'
@@ -7,15 +7,15 @@ import Header from './components/Header'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename='/SpotifyWrapped-Client'>
       <Header />
       <div className='main-div'>
         <Routes>
-          <Route path="/SpotifyWrapped-Client" element={<Home />}/>
-          <Route path="/SpotifyWrapped-Client/dashboard" element={<Dashboard />}/>
+          <Route path="/" element={<Home />}/>
+          <Route path="/dashboard" element={<Dashboard />}/>
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
