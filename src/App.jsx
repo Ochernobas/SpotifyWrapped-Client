@@ -7,7 +7,7 @@ import Header from './components/Header'
 
 function App() {
   return (
-    <HashRouter basename='/SpotifyWrapped-Client'>
+    <BrowserRouter basename='/SpotifyWrapped-Client'>
       <Header />
       <div className='main-div'>
         <Routes>
@@ -15,7 +15,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}/>
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
