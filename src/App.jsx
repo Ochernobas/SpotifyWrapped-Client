@@ -11,8 +11,8 @@ function App() {
       <Header />
       <div className='main-div'>
         <Routes>
-          <Route path="/SpotifyWrapped-Client/" element={<Home />}/>
-          <Route path="/SpotifyWrapped-Client/#/dashboard" element={<Dashboard />}/>
+          <Route path="/" element={<Home />}/>
+          <Route path="/dashboard" element={<Dashboard />}/>
         </Routes>
       </div>
     </HashRouter>
