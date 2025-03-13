@@ -7,15 +7,15 @@ import Header from './components/Header'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <div className='main-div'>
         <Routes>
-          <Route path="/SpotifyWrapped-Client" element={<Home />}/>
-          <Route path="/SpotifyWrapped-Client/dashboard" element={<Dashboard />}/>
+          <Route path="/SpotifyWrapped-Client/" element={<Home />}/>
+          <Route path="/SpotifyWrapped-Client/#/dashboard" element={<Dashboard />}/>
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
