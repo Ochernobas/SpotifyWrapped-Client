@@ -9,7 +9,7 @@ import Genre from '../components/Genre';
 import fileDownload from "js-file-download"
 import { Link } from 'react-router-dom';
 
-const baseURL = "http://127.0.0.1:8000/"
+const baseURL = "https://192.168.10.115:8000/"
 
 const Dashboard = () => {
     const [username, setUsername] = useState("Username")
@@ -22,23 +22,9 @@ const Dashboard = () => {
     const [image, setImage] = useState("")
 
     useEffect( () => {
-        if (window.location.hash) {
-            const { access_token, expires_in, token_type } = getReturnedParamsFromSpotifyAuth(window.location.hash)
-            localStorage.clear()
-            localStorage.setItem("accessToken", access_token)
-            localStorage.setItem("expiresIn", expires_in)
-            localStorage.setItem("tokenType", token_type)
-
-            axios.post(baseURL, {
-                access_token: access_token,
-                token_type: token_type,
-                expires_in: expires_in
-            })
-
-            get_profile()
-            get_tracks()
-            get_artists()
-        }
+        get_profile()
+        get_tracks()
+        get_artists()
     }, [])
 
     const get_profile = async () => {

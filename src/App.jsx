@@ -1,21 +1,18 @@
-import { useState } from 'react'
 import { HashRouter, BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home'
-import Dashboard from './pages/Dashboard'
 import Header from './components/Header'
+import Handler from './pages/Handler'
 
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename='/SpotifyWrapped-Client/'>
       <Header />
       <div className='main-div'>
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route exact path="/" element={<Handler />}/>
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
